@@ -1,0 +1,24 @@
+ultimo = 15
+fila = list(range(1,ultimo+1))
+
+while True:
+    print(f'\nEisten {len(fila)}) cliente na lista')
+    print(f'Fila atual {fila}')
+    print(f'Digite F para adicionar  um cliente ao fim da fila')
+    print(f'Digite A para realizar o atendimento ou digite S para sair')
+    operacao = input('Operacao (F, A ou S)')
+    if operacao =="A":
+        if  len  (fila)>0:
+            atendido =fila.pop(0)
+            print(f'Cliente {atendido}')
+        else:
+            print(f'Lista Vazia')
+    elif operacao == "F":
+        ultimo +=1
+        fila.append(ultimo)
+    elif operacao =="S":
+        print(f'atendimento encerrado')
+        break 
+    else: 
+        print(f'Operacao invalida, digita só o que a gente combinou mano ')
+
