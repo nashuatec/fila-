@@ -1,0 +1,35 @@
+ultimo = 0
+fila1= []
+fila2 = []
+while True:
+    print(f'\nExistem {len(fila1)} cliente na fila 1 e {len(fila2)} na fila 2.')
+    print(f'Fila 1 atual: {fila1}')
+    print(f'Fila 2 atual:{fila2}')
+    print(f"Digite F para adicionar um cliente ao fim da fila 1 (ou G para fial 2)")
+    print(f'ou A para realizar o atendimento a fila 1 ( ou B para fila 2)')
+    print("S para sair")
+    operacao = input("operacao (F,G,A,B ou S):")
+    x = 0
+    sair = False
+    while x < len (operacao):
+        if operacao[x] == "A" or operacao =="F":
+            fila = fila1
+        else: 
+            fila=fila2
+        if operacao [x] =="A " or operacao =="B":
+            if len (fila)> 0:
+                atendido = fila.pop(0)
+                print(f'cliente {atendido} atendido')
+            else:
+                print("Fila Vazia")
+        elif operacao [x] =="F" or operacao[x] =="G":
+            ultimo += 1
+            fila.append(ultimo)
+        elif operacao[x] == "S":
+            sair = True
+            break
+        else:
+            print(f'operacao invalida {operacao[x]} na posicao {x}! Digite Apenas F, A ou Se')
+            x=x+1
+        if sair:
+            break
